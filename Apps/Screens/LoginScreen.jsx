@@ -9,7 +9,8 @@ export default function LoginScreen() {
        
        />
        <View className="p-8">
-        <Text className="text-[30px] font-bold">Utibu Pharmacy</Text>
+        <Text className="text-[35px] font-bold">Utibu Pharmacy</Text>
+        <Text className="text-[18px] text-slate-500 mt-6" >Never run out of your essential medications again. Easily refill your prescriptions through our app, and we'll ensure your medications are ready for pickup or delivery.</Text>
 
        </View>
     </View>
