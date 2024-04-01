@@ -2,6 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginScreen from './Apps/Screens/LoginScreen';
 import { ClerkProvider } from '@clerk/clerk-expo';
+import { SignedIn } from '@clerk/clerk-expo';
+import { SignedOut } from '@clerk/clerk-expo';
+
 export default function App() {
   return (
     <ClerkProvider publishableKey='pk_test_YWRhcHRlZC1jYXJkaW5hbC0zNy5jbGVyay5hY2NvdW50cy5kZXYk'>
