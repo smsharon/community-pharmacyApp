@@ -8,6 +8,10 @@ export default function LoginScreen() {
            className="w-full h-[400px] object-cover"
        
        />
+       <View className="p-20">
+        <Text>Utibu Pharmacy</Text>
+
+       </View>
     </View>
   )
 }
