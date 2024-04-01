@@ -4,7 +4,10 @@ import React from 'react'
 export default function LoginScreen() {
   return (
     <View>
-      <Text>LoginScreen</Text>
+       <Image source={require('./../../assets/images/Login.jpg')}
+           className="w-full h-[400px] object-cover"
+       
+       />
     </View>
   )
 }
