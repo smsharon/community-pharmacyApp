@@ -12,7 +12,7 @@ export default function App() {
           <Text>You are Signed in</Text>
         </SignedIn>
         <SignedOut>
-        <Text>You are Signed out</Text>
+        <LoginScreen />
         </SignedOut>
     </View>
     </ClerkProvider>
