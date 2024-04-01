@@ -8,8 +8,8 @@ export default function LoginScreen() {
            className="w-full h-[400px] object-cover"
        
        />
-       <View className="p-20">
-        <Text>Utibu Pharmacy</Text>
+       <View className="p-8">
+        <Text className="text-[30px] font-bold">Utibu Pharmacy</Text>
 
        </View>
     </View>
