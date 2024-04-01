@@ -8,6 +8,12 @@ export default function App() {
     <View className="flex-1  bg-white">
       <StatusBar style="auto" />
       <LoginScreen />
+      <SignedIn>
+          <Text>You are Signed in</Text>
+        </SignedIn>
+        <SignedOut>
+        <Text>You are Signed out</Text>
+        </SignedOut>
     </View>
     </ClerkProvider>
   );
