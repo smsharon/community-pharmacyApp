@@ -7,19 +7,24 @@ import { useOAuth } from "@clerk/clerk-expo";
 WebBrowser.maybeCompleteAuthSession();
 
 export default function LoginScreen() {
+  console.log("Rendering LoginScreen component");
 
   useWarmUpBrowser();
  
   const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
 
   const onPress = React.useCallback(async () => {
+    console.log("Button pressed");
     try {
       const { createdSessionId, signIn, signUp, setActive } =
         await startOAuthFlow();
+      console.log("OAuth flow started");
+
  
       if (createdSessionId) {
         setActive({ session: createdSessionId });
       } else {
+        console.log("No session created");
         // Use signIn or signUp for next steps such as MFA
       }
     } catch (err) {
