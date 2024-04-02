@@ -1,5 +1,8 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
+import * as WebBrowser from "expo-web-browser";
+
+WebBrowser.maybeCompleteAuthSession();
 
 export default function LoginScreen() {
   return (
