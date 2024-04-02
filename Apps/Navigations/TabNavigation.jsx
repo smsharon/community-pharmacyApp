@@ -10,7 +10,9 @@ import ProfileScreen from '../Screens/ProfileScreen';
 const Tab = createBottomTabNavigator();
 export default function TabNavigation() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{
+        headerShown:false
+    }}>
         <Tab.Screen name='home' component={HomeScreen} />
         <Tab.Screen name='orders' component={MedOrders} />
         <Tab.Screen name='refills' component={MedRefills} />
