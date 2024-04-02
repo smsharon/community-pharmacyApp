@@ -4,6 +4,8 @@ import LoginScreen from './Apps/Screens/LoginScreen';
 import { ClerkProvider } from '@clerk/clerk-expo';
 import { SignedIn } from '@clerk/clerk-expo';
 import { SignedOut } from '@clerk/clerk-expo';
+import { NavigationContainer } from '@react-navigation/native';
+import TabNavigation from './Apps/Navigations/TabNavigation';
 
 export default function App() {
   return (
@@ -12,7 +14,9 @@ export default function App() {
       <StatusBar style="auto" />
       <LoginScreen />
       <SignedIn>
-          <Text className="mt-10">You are Signed in</Text>
+          <NavigationContainer>
+            <TabNavigation />
+          </NavigationContainer>
         </SignedIn>
         <SignedOut>
         <LoginScreen />
