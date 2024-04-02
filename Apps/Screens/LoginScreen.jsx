@@ -1,10 +1,16 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import * as WebBrowser from "expo-web-browser";
+import { useWarmUpBrowser } from "../../hooks/useWarmUpBrowser";
 
 WebBrowser.maybeCompleteAuthSession();
 
 export default function LoginScreen() {
+
+  useWarmUpBrowser();
+ 
+  const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
+  
   return (
     <View>
        <Image source={require('./../../assets/images/Login.jpg')}
