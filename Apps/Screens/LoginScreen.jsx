@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import * as WebBrowser from "expo-web-browser";
 import { useWarmUpBrowser } from "../../hooks/useWarmUpBrowser";
