@@ -22,8 +22,8 @@ export default function MedRefills() {
 
     }
   return (
-    <View>
-      <Text>MedRefills</Text>
+    <View className="p-5 py-12">
+      <Text className="text-[30px] font-bold">Order your Medicines</Text>
     </View>
   )
 }
