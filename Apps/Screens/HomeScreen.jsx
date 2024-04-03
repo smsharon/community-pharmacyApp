@@ -1,13 +1,25 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../Components/Header'
 import Slider from '../Components/HomeScreen/Slider'
 import { getFirestore } from "firebase/firestore";
 import { app } from '../../firebaseConfig';
+import { collection, getDocs } from "firebase/firestore";
 
 export default function HomeScreen() {
     const db = getFirestore(app);
-    const getSliders=()=>{
+    useEffect(()=>{
+      getSliders();
+
+    },[])
+    /**used to get sliders for home screen */
+    const getSliders=async()=>{
+    const querySnapshot = await getDocs(collection(db, "Sliders"));
+querySnapshot.forEach((doc) => {
+  // doc.data() is never undefined for query doc snapshots
+  console.log(doc.id, " => ", doc.data());
+});
+
 
     }
   return (
