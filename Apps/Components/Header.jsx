@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 export default function Header() {
     const {user} = useUser();
   return (
-    <View>
+    <View className="py-2">
         {/*user info sectiom*/}
     <View className="flex flex-row items-center gap-2">
       <Image source={{uri:user?.imageUrl}}
