@@ -6,6 +6,7 @@ import MedOrders from '../Screens/MedOrders';
 import MedRefills from '../Screens/MedRefills';
 import ProfileScreen from '../Screens/ProfileScreen';
 import { Ionicons } from '@expo/vector-icons';
+import ProfileStackNav from './ProfileStackNav';
 
 
 const Tab = createBottomTabNavigator();
@@ -46,7 +47,7 @@ export default function TabNavigation() {
             )
            }}
         />
-        <Tab.Screen name='profile' component={ProfileScreen} 
+        <Tab.Screen name='profile' component={ProfileStackNav} 
         options={{
             tabBarLabel:({color})=>(
                 <Text style={{color:color,fontSize:12,marginBottom:3}}>Profile</Text>
