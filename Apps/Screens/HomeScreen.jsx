@@ -15,6 +15,7 @@ export default function HomeScreen() {
     },[])
     /**used to get sliders for home screen */
     const getSliders=async()=>{
+      setSliderList([])
     const querySnapshot = await getDocs(collection(db, "Sliders"));
 querySnapshot.forEach((doc) => {
   
