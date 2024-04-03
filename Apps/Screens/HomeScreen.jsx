@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Components/Header'
 import Slider from '../Components/HomeScreen/Slider'
 import { getFirestore } from "firebase/firestore";
@@ -8,6 +8,7 @@ import { collection, getDocs } from "firebase/firestore";
 
 export default function HomeScreen() {
     const db = getFirestore(app);
+    const [sliderList, setSliderList]=useState([]);
     useEffect(()=>{
       getSliders();
 
@@ -16,8 +17,9 @@ export default function HomeScreen() {
     const getSliders=async()=>{
     const querySnapshot = await getDocs(collection(db, "Sliders"));
 querySnapshot.forEach((doc) => {
-  // doc.data() is never undefined for query doc snapshots
-  console.log(doc.id, " => ", doc.data());
+  
+  
+  setSliderList(sliderList=>[...sliderList,doc.data()]);
 });
 
 
@@ -26,7 +28,7 @@ querySnapshot.forEach((doc) => {
     <View className="py-8 px-6 bg-white flex-1">
       <Header />
       {/*slider */}
-      <Slider />
+      <Slider sliderList={sliderList} />
     </View>
   )
 }
