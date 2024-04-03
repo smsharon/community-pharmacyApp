@@ -9,7 +9,7 @@ export default function Categories({categoryList}) {
       data={categoryList}
       numColumns={2}
       renderItem={({item,index})=>(
-        <TouchableOpacity className="flex-1 items-center justify-center p-2 border-[1px] border-gray-300 m-1 h-[130px] rounded-lg">
+        <TouchableOpacity className="flex-1 items-center justify-center p-2 border-[1px] border-blue-200 m-1 h-[130px] rounded-lg bg-blue-50">
           <Image source={{uri:item?.image}}
           className="w-[80px] h-[100px]"
           />
