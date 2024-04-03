@@ -21,7 +21,7 @@ export default function Header() {
       </View>
     </View>
     {/*search bar */}
-    <View className="p-3 px-5 flex flex-row items-center bg-white mt-5 rounded-full border-[1px] border-blue-500">
+    <View className="p-[9px] px-5 flex flex-row items-center bg-blue-50 mt-5 rounded-full border-[1px] border-blue-300">
     <Ionicons name="search" size={24} color="gray" />
         <TextInput placeholder='search'
          className="ml-2 text-[18px]"
