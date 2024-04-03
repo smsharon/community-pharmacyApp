@@ -7,13 +7,13 @@ export default function Categories({categoryList}) {
       <Text className="font-bold text-[20px]">Popular medicine</Text>
       <FlatList 
       data={categoryList}
-      numColumns={3}
+      numColumns={2}
       renderItem={({item,index})=>(
-        <View className="flex-1 items-center justify-center p-4 border-[1px] border-gray-300 m-1 h-[250px] rounded-lg">
+        <View className="flex-1 items-center justify-center p-2 border-[1px] border-gray-300 m-1 h-[130px] rounded-lg">
           <Image source={{uri:item?.image}}
-          className="w-[100px] h-[200px]"
+          className="w-[80px] h-[100px]"
           />
-          <Text>{item.name}</Text>
+          <Text className="text-[12px] mt-1">{item.name}</Text>
         </View>
       )}
       />
