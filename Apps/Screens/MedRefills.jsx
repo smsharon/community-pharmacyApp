@@ -1,4 +1,4 @@
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity, FlatList} from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { app } from '../../firebaseConfig';
 import { getFirestore,getDocs,collection } from "firebase/firestore";
@@ -16,14 +16,33 @@ export default function MedRefills() {
     },[])
 
 
-    const getMedicineList=async()=>{
-      setMedicineList([])
-        const querySnapshot=await getDocs(collection(db,'medicines'));
-        querySnapshot.forEach((doc)=>{
-            console.log("Docs:",doc.data());
-        })
+    const getMedicineList = async () => {
+      const querySnapshot = await getDocs(collection(db, 'medicines'));
+      const medicines = [];
+      querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          medicines.push(data);
+      });
+      setMedicineList(medicines);
+  }
 
-    }
+  const renderItem = ({ item }) => (
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#ccc', paddingVertical: 10 }}>
+          <View>
+              <Text style={{ fontWeight: 'bold' }}>{item.name}</Text>
+              <Text>{item.description}</Text>
+              <Text>Category: {item.category}</Text>
+              <Text>Dosage: {item.dosage}</Text>
+              <Text>Price: {item.price}</Text>
+          </View>
+          <TouchableOpacity onPress={() => refillMedication(item)}>
+              <Text style={{ color: 'blue' }}>Refill</Text>
+          </TouchableOpacity>
+      </View>
+  );
+  const filterMedicines = () => {
+    return medicineList.filter(medicine => medicine.name.toLowerCase().includes(searchQuery.toLowerCase()));
+}
   return (
     <View className="p-5 py-12">
       <Text className="text-[30px] font-bold">Order your Medicines</Text>
@@ -34,6 +53,11 @@ export default function MedRefills() {
                     value={searchQuery}
                     placeholder="Search for a medication"
                 />
+                <FlatList
+                data={filterMedicines()}
+                renderItem={renderItem}
+                keyExtractor={(item, index) => item.id ? item.id.toString() : index.toString()}
+            />
             </View>
     </View>
   )
