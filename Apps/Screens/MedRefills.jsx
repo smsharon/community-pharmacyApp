@@ -9,6 +9,7 @@ export default function MedRefills() {
     const db = getFirestore(app);
     const [medicineList, setMedicineList]=useState([]);
     const [searchQuery, setSearchQuery] = useState('');
+    
 
     useEffect(()=>{
         getMedicineList();
@@ -27,7 +28,7 @@ export default function MedRefills() {
   }
 
   const renderItem = ({ item }) => (
-      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#ccc', paddingVertical: 10 }}>
+      <View style={{ flexDirection: 'column', justifyContent: 'space-between', alignItems: 'center', borderBottomWidth: 1, borderBottomColor: '#ccc', paddingVertical: 10, paddingTop:4, borderRadius: 8, marginBottom: 10,padding: 10,}}>
           <View>
               <Text style={{ fontWeight: 'bold' }}>{item.name}</Text>
               <Text>{item.description}</Text>
@@ -55,6 +56,7 @@ export default function MedRefills() {
                 />
                 <FlatList
                 data={filterMedicines()}
+                
                 renderItem={renderItem}
                 keyExtractor={(item, index) => item.id ? item.id.toString() : index.toString()}
             />
