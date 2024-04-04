@@ -36,12 +36,12 @@ To run the Community Pharmacy App locally on your machine, follow these steps:
 
 ## Technologies Used
 
-1.React Native
-2.Firebase Realtime Database
-3.Firebase Authentication
-4.Expo
-5.Tailwind css
-.
+1. React Native
+2. Firebase Realtime Database
+3. Firebase Authentication
+4. Expo
+5. Tailwind css
+
 ## Contributing
 
 Contributions are welcome! To contribute to the Community Pharmacy App, follow these steps:
