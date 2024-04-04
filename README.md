@@ -31,6 +31,7 @@ To run the Community Pharmacy App locally on your machine, follow these steps:
 4. Receive order updates and refill reminders.
 
 ## Demo
+<img src="./assets/images/demo.gif" alt="Your GIF" width="400"/>
 
 
 ## Technologies Used
