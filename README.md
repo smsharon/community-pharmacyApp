@@ -18,7 +18,7 @@ Community Pharmacy App is a mobile application designed to help users manage the
 
 To run the Community Pharmacy App locally on your machine, follow these steps:
 
-1. Clone the repository: `git clone <repository-url>`
+1. Clone the repository: `git clone git@github.com:smsharon/community-pharmacyApp.git`
 2. Navigate to the project directory: `cd community-pharmacyApp`
 3. Install dependencies: `npm install`
 4. Run the app: `npm start`
